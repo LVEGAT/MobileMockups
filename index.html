@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Hunter Mobile App</title>
+
+    <link rel="stylesheet" href="styles/kendo.common.min.css"/>
+    <link rel="stylesheet" href="styles/kendo.rtl.min.css"/>
+    <link rel="stylesheet" href="styles/kendo.silver.min.css"/>
+    <link rel="stylesheet" href="styles/kendo.mobile.all.min.css"/>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/kendo.all.min.js"></script>
+</head>
+<body>
+
+    <div id="foo" data-role="view" data-layout="default">
+<ul data-role="listview" data-style="inset" data-type="group">
+    <li>
+        Main Application Sites
+        <ul>
+            <li>Site1<a data-role="detailbutton" data-style="detaildisclose"></a></li>
+            <li>Site2<a data-role="detailbutton" data-style="detaildisclose"></a></li>
+            <li>Site3<a data-role="detailbutton" data-style="detaildisclose"></a></li>
+            <li>Site4<a data-role="detailbutton" data-style="detaildisclose"></a></li>
+        </ul>
+    </li>
+    <li>
+        Custom icons
+        <ul>
+            <li>Battery level<a data-role="detailbutton" data-icon="battery"></a></li>
+        </ul>
+    </li>
+    <li>
+        Link Items & Detail Buttons
+        <ul>
+            <li><a>Row Insert</a><a data-role="detailbutton" data-style="rowinsert"></a></li>
+            <li><a>Battery Level</a><a data-role="detailbutton" data-icon="battery"></a></li>
+        </ul>
+    </li>
+</ul>
+ 
+    </div>
+
+    <div id="about" data-role="view" data-layout="default">
+      Vista about
+    </div>
+
+  
+    <div id="home" data-role="view" data-layout="default">
+      Welcome to Hunter App
+      <div data-role="tabstrip">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#foo">View sites</a>
+        </div>
+    </div>
+
+    <section data-role="layout" data-id="default">
+      <header data-role="header">
+        <div data-role="navbar">Hunter</div>
+      </header>
+      <!--View content will render here-->
+      <footer data-role="footer">
+        <div data-role="tabstrip">
+          <a data-icon="home" href="#home">Home</a>
+        </div>
+      </footer>
+    </section>
+
+    <script>
+      var app = new kendo.mobile.Application(document.body);
+    </script>
+</body>
+</html>
