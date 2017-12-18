@@ -15,105 +15,115 @@
 </head>
 <body>
 
-       
-
-
-    <!-- <div data-role="view">
-        <ul data-role="listview" id="foo" data-click="listViewClick">
-            <li>Item 1</li>
-            <li>Item 2</li>
-        </ul>
-        </div>
-        
-        <script>
-        function listViewClick(e) {
-            console.log(e.item); // The clicked item as a jQuery object
-        }
-        
-        new kendo.mobile.Application();
-        </script> -->
-    
-    <div id="sides" data-role="view" data-show="viewInit">
+    <div id = "siteview" data-role="view" data-init="viewInitSite">
         <h2 style="text-align:center ">Sites</h2>
-        <ul id="listView" data-role="listview"  data-click="listViewClick" ></ul>
+        <ul id="listSite" data-role="listview"  data-click="listViewClick" ></ul>
+    </div>
+
+    <div data-role="view" id="controllers" data-init="viewInitCtl" data-stretch="true">
+            <a data-role="backbutton">Back</a> <h3 style="text-align:center"> Controllers </h3>
+            <div id="gridCtrl"></div>
+            <div id="details"></div>
     </div>
 
     <script>
+
         var app = new kendo.mobile.Application();
-        function viewInit(e) {
-            app.pane.loader.show();
-            setTimeout(() => {
-                    e.view.element.find("#listView").kendoMobileListView({
-                    dataSource: [ "Site1", "Site2", "Site3", "Site4" ],
-                    filterable: true,
-                    style : "detaildisclose"
-                });
-                app.pane.loader.hide();
-            }, 600);
+        var wnd,gridConfig,
+        detailsTemplate;
+        var that = this;
+
+        $(document).ready(function () {
+            gridConfig = {
+                columns: [
+                    { field: "name" },
+                    { field: "alarm" },
+                    { command: { text: "View Details", click: showDetails } }
+                ],
+                dataSource: [
+                    { name: "Controller 1", alarm: 30 },
+                    { name: "Controller 2", alarm: 0 },
+                    { name: "Controller 3", alarm: 10 },
+                    { name: "Controller 4", alarm: 11 },
+                    { name: "Controller 5", alarm: 12 }
+                ],
+                filterable: true,
+                columnMenu: true,
+                mobile: "phone",
+                height: "auto"
+            };
+
+            wnd = $("#details")
+                .kendoWindow({
+                    title: "Controllers Details",
+                    modal: true,
+                    visible: false,
+                    resizable: false,
+                    width: 300
+                }).data("kendoWindow");
+
+            detailsTemplate = kendo.template($("#template").html());
+        });
+
+        function viewInitSite(e) {
+            e.view.element.find("#listSite").kendoMobileListView({
+                dataSource: [ "Site1", "Site2", "Site3", "Site4" ],
+                filterable: true,
+                style : "detaildisclose"
+            });
+        }
+
+        function viewInitCtl(e) {
+            $("#gridCtrl").kendoGrid(gridConfig);
+        }
+       
+        function showDetails(e) {
+            e.preventDefault();
+
+            var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+            wnd.content(detailsTemplate(dataItem));
+            wnd.center().open();
         }
 
         function listViewClick(e) {
+
             console.log(e.item); // The clicked item as a jQuery object
-        }
-        new kendo.mobile.Application();
-    </script>
-
-
-    <div data-role="view" id="controllers">
-        <h1> this is a litle sample of controller </h1>
-    </div>
-
-    <!-- <div id="foo" data-role="view" data-layout="default">
-        <ul data-role="listview" data-style="inset" data-type="group" data-click="listViewClick">
-            <li>
-                Sites
-                <ul>
-                    <li>Site1<a data-role="detailbutton" data-style="detaildisclose" ></a></li>
-                    <li>Site2<a data-role="detailbutton" data-style="detaildisclose"></a></li>
-                    <li>Site3<a data-role="detailbutton" data-style="detaildisclose"></a></li>
-                    <li>Site4<a data-role="detailbutton" data-style="detaildisclose"></a></li>
-                    <li>Site5<a data-role="detailbutton" data-style="detaildisclose"></a></li>
-                    <li>Site6<a data-role="detailbutton" data-style="detaildisclose"></a></li>
-                </ul>
-            </li>
-
- 
-    <li>
-        Custom icons
-        <ul>
-            <li>Battery level<a data-role="detailbutton" data-icon="battery"></a></li>
-        </ul>
-    </li> -->
-    <!-- <li>
-        Link Items & Detail Buttons
-        <ul>
-            <li><a>Row Insert</a><a data-role="detailbutton" data-style="rowinsert"></a></li>
-            <li><a>Battery Level</a><a data-role="detailbutton" data-icon="battery"></a></li>
-        </ul>
-    </li> 
-        </ul>
- 
-    </div> -->
-
-    <!-- <div id="about" data-role="view" data-layout="default">
-      Vista about
-    </div> -->
-
-    <!-- <script>
-        function listViewClick(e) {
-            console.log(e.item); // The clicked item as a jQuery object
+            app.navigate("#controllers", "slide");
         }
         
         new kendo.mobile.Application();
-    </script> -->
-    <!-- <div id="home" data-role="view" data-layout="default">
-      Welcome to Hunter App
-      <div data-role="tabstrip">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#foo">View sites</a>
+    
+    </script>
+
+    <script type="text/x-kendo-template" id="template">
+        <div id="details-container">
+            <h2>#= name # </h2>
+            <em>#= alarm #</em>
+            <dl>
+                <dt>Alarm: #= alarm #</dt>
+              
+            </dl>
         </div>
-    </div> -->
+    </script>
+
+    <style type="text/css">
+        #details-container {
+            padding: 10px;
+        }
+
+        #details-container h2 {
+            margin: 0;
+        }
+
+        #details-container em {
+            color: #8c8c8c;
+        }
+
+        #details-container dt {
+            margin: 0;
+            display: inline;
+        }
+    </style>
 
     <section data-role="layout" data-id="default">
       <header data-role="header">
