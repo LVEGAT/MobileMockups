@@ -1,218 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>Hunter Mobile App</title>
 
-    <link rel="stylesheet" href="styles/kendo.common.min.css"/>
-    <link rel="stylesheet" href="styles/kendo.rtl.min.css"/>
-    <link rel="stylesheet" href="styles/kendo.silver.min.css"/>
-    <link rel="stylesheet" href="styles/kendo.mobile.all.min.css"/>
+    <link rel="stylesheet" href="styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="styles/kendo.rtl.min.css" />
+    <link rel="stylesheet" href="styles/kendo.silver.min.css" />
+    <link rel="stylesheet" href="styles/kendo.mobile.all.min.css" />
 
     <script src="js/jquery.min.js"></script>
     <script src="js/kendo.all.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.all.min.js"></script>
 </head>
+
 <body>
 
     <div id="siteview" data-role="view" data-init="viewInitSite">
-        <!-- <header data-role="header">
-            <div data-role="navbar">
-            </div>
-        </header> -->
         <h2 style="text-align:center ">IMMS System</h2>
         <ul id="listSite" data-role="listview" data-click="listViewClick"></ul>
     </div>
 
-    <div data-role="view" id="controllers" data-init="viewInitCtl" data-stretch="true" data-title="Controllers">
-            <header data-role="header">
-                <div data-role="navbar">
-                        <!-- <a class="nav-button" data-align="left" data-icon="back" data-role="button" data-click="onClickBack"></a>  -->
-                        <a class="nav-button" data-align="left" data-role="backbutton"  data-icon="back" >Back</a> 
-                        
-                        <span data-role="view-title"></span>
-                        <a class="nav-button" data-align="right" data-icon="refresh" data-role="button" ></a>
-                </div>
-            </header> 
-            
-            <div id="gridCtrl"></div>
-            <div id="details"></div>
-            <ul id="actionsheet" data-role="actionsheet" data-popup='{ "height": "auto", "width": 200, "direction": "left" }'>
-                <li><a>Set Date/Time </a></li>
-                <li><a>Comm Check </a></li>
-                <li><a>Set Seasonal Adjust</a></li>
-                <li><a>Set Off Days</a></li>
-                <li><a>Cancel Off Days</a></li>
-                <li><a>Report Current Flow </a></li>
-                <li><a>Run Program</a></li>
-                <li><a>Run Station</a></li>
-                <li><a>Pause Irrigation</a></li>
-                <li><a>Cancel Pause Irrigation</a></li>
-                <li><a>Stop Irrigation</a></li>
-            </ul>
 
-            <ul id="actionProgram" data-role="actionsheet" data-popup='{ "height": "auto", "width": 200, "direction": "left" }'>
-                    <li><a data-action="programA">Program A</a></li>
-                    <li><a data-action="programB">Program B</a></li>
-                    <li><a data-action="programC">Program C</a></li>
-                    <li><a data-action="programD">Program D</a></li>
-                    <li><a data-action="programE">Program E</a></li>
-                    <li><a data-action="programF">Program F</a></li>
-            </ul>
-    </div>
-
-
-    
     <script>
-
         var app = new kendo.mobile.Application(document.body, { skin: "flat" });
-        var wnd,gridConfig,
-        detailsTemplate;
         var that = this;
-
-        $(document).ready(function () {
-            gridConfig = {
-                columns: [
-                    { field: "name",title : "Name" },
-                    { field: "alarm" ,title : "Alarms" },
-                    { field: "sensor",title : "Sensors" },
-                    // { command: { text: "Details",name:"details", click: showDetails } },
-                    { command: { text: "...", name:"menu",template:  "<a data-role='button' data-rel='actionsheet' href='\\#actionsheet'>Run</a>" }},
-                    { command: { text: "...", name:"menu",template:  "<a data-role='button' data-rel='actionsheet' href='\\#actionProgram'>Program</a>" }}
-                ],
-                dataSource: [
-                    { name: "Controller 1", alarm: 30,sensor: "3 Sensor" },
-                    { name: "Controller 2", alarm: 0,sensor: "2 Sensor" },
-                    { name: "Controller 3", alarm: 10,sensor: "No Sensors" },
-                    { name: "Controller 4", alarm: 11,sensor: "No Sensors" },
-                    { name: "Controller 5", alarm: 12,sensor: "No Sensors" }
-                ],
-                filterable: true,
-                columnMenu: true,
-                mobile: "phone",
-                height: "auto"
-            };
-
-            wnd = $("#details")
-                .kendoWindow({
-                    title: "Controllers Details",
-                    modal: true,
-                    visible: false,
-                    resizable: false,
-                    width: 300
-                }).data("kendoWindow");
-
-            detailsTemplate = kendo.template($("#template").html());
-        });
+        function listViewClick(e) {
+            app.navigate("controller.html", "slide");
+        }      
 
         function viewInitSite(e) {
-            e.view.element.find("#listSite").kendoMobileListView({
-                dataSource: [ "Site 01", "Site 02", "Site 03", "Site 04" ],
-                filterable: true,
-                style : "detaildisclose"
-            });
-        }
-
-        function viewInitCtl(e) {
-            $("#gridCtrl").kendoGrid(gridConfig);
-        }
-       
-        function showDetails(e) {
-            e.preventDefault();
-
-            var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-            wnd.content(detailsTemplate(dataItem));
-            wnd.center().open();
-        }
-
-        function listViewClick(e) {
-
-            console.log(e.item); // The clicked item as a jQuery object
-            app.navigate("#controllers", "slide");
-        }
-        
-        function  onClickBack(e) {
-            window.history.back();
-            console.log("go back");
-        }        
-
-        function  showMenu(e) {            
-            app.navigate("#actionsheet", "slide");
-        }   
-
-        function programA(e) {
-            console.log("a");
-        }
-        function programB(e) {
-            console.log("b");
-        }
-        function programC(e) {
-            console.log("c");
-        }
-        function programD(e) {
-            console.log("d");
-        }
-        function programE(e) {
-            console.log("e");
-        }
-        function programF(e) {
-            console.log("f");
-        }
-    
-      //  new kendo.mobile.Application(document.body, { skin: "nova" });
-    
+        e.view.element.find("#listSite").kendoMobileListView({
+            dataSource: ["Site 01", "Site 02", "Site 03", "Site 04"],
+            filterable: true,
+            style: "detaildisclose"
+        });
+    }   
     </script>
-
-    <script type="text/x-kendo-template" id="template">
-        <div id="details-container">
-            <h2>#= name # </h2>
-            <em>#= alarm #</em>
-            <dl>
-                <dt>Alarm: #= alarm #</dt>
-              
-            </dl>
-        </div>
-    </script>
-
-    <style type="text/css">
-        #details-container {
-            padding: 10px;
-        }
-
-        #details-container h2 {
-            margin: 0;
-        }
-
-        #details-container em {
-            color: #8c8c8c;
-        }
-
-        #details-container dt {
-            margin: 0;
-            display: inline;
-        }
-        .k-grid {
-            font-size: 11px!important;
-        }
-        .k-grid td {
-            line-height: 2em!important;
-        }
-    </style>
-
-    <section data-role="layout" data-id="default">
-      <header data-role="header">
-        <div data-role="navbar">Hunter</div>
-      </header>
-      <!--View content will render here-->
-      <footer data-role="footer">
-        <div data-role="tabstrip">
-          <a data-icon="home" href="#home">Home</a>
-        </div>
-      </footer>
-    </section>
 
     <script>
-      var app = new kendo.mobile.Application(document.body, { skin: "flat" });
+        var app = new kendo.mobile.Application(document.body, { skin: "flat" });
     </script>
+
 </body>
+
 </html>

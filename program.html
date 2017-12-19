@@ -1,0 +1,58 @@
+<div data-role="view" id="editProgram" data-init="viewInitProgram" data-stretch="true" data-title="Edit Program">
+    <header data-role="header">
+        <div data-role="navbar">
+            <!-- <a class="nav-button" data-align="left" data-icon="back" data-role="button" data-click="onClickBack"></a>  -->
+            <a class="nav-button" data-align="left" data-role="backbutton" data-icon="back">Back</a>
+
+            <span data-role="view-title"></span>
+            <a class="nav-button" data-align="right" data-icon="refresh" data-role="button"></a>
+        </div>
+    </header>
+
+    <div id="gridEditProgram"></div>
+</div>
+
+<script>
+    var gridProgram;
+
+    $(document).ready(function () {
+
+        
+        // gridConfig = {
+        //     columns: [
+        //         { field: "name", title: "Name" },
+        //         { field: "alarm", title: "Alarms" },
+        //         { field: "sensor", title: "Sensors" },
+        //         // { command: { text: "Details",name:"details", click: showDetails } },
+        //         { command: { text: "...", name: "menu", template: "<a data-role='button' data-rel='actionsheet' href='\\#actionsheet'>Run</a>" } },
+        //         { command: { text: "...", name: "menu", template: "<a data-role='button' data-rel='actionsheet' href='\\#actionProgram'>Program</a>" } }
+        //     ],
+        //     dataSource: [
+        //         { name: "Controller 1", alarm: 30, sensor: "3 Sensor" },
+        //         { name: "Controller 2", alarm: 0, sensor: "2 Sensor" },
+        //         { name: "Controller 3", alarm: 10, sensor: "No Sensors" },
+        //         { name: "Controller 4", alarm: 11, sensor: "No Sensors" },
+        //         { name: "Controller 5", alarm: 12, sensor: "No Sensors" }
+        //     ],
+        //     filterable: true,
+        //     columnMenu: true,
+        //     mobile: "phone",
+        //     height: "auto"
+        // };
+
+        // wnd = $("#details")
+        //     .kendoWindow({
+        //         title: "Controllers Details",
+        //         modal: true,
+        //         visible: false,
+        //         resizable: false,
+        //         width: 300
+        //     }).data("kendoWindow");
+
+        // detailsTemplate = kendo.template($("#template").html());
+    });
+
+    function viewInitProgram(e) {
+        // $("#gridCtrl").kendoGrid(gridConfig);
+    }
+</script>
