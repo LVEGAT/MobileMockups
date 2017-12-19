@@ -13,6 +13,9 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/kendo.all.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.all.min.js"></script>
+    <script src="index.js"></script>
+    <script src="controller.js"></script>
+    <script src="program.js"></script>
 </head>
 
 <body>
@@ -23,24 +26,14 @@
     </div>
 
 
-    <script>
-        var app = new kendo.mobile.Application(document.body, { skin: "flat" });
-        var that = this;
-        function listViewClick(e) {
-            app.navigate("controller.html", "slide");
-        }      
-
-        function viewInitSite(e) {
-        e.view.element.find("#listSite").kendoMobileListView({
-            dataSource: ["Site 01", "Site 02", "Site 03", "Site 04"],
-            filterable: true,
-            style: "detaildisclose"
-        });
-    }   
-    </script>
-
-    <script>
-        var app = new kendo.mobile.Application(document.body, { skin: "flat" });
+    <script type="text/x-kendo-template" id="template">
+        <div id="details-container">
+            <h2>#= name # </h2>
+            <em>#= alarm #</em>
+            <dl>
+                <dt>Alarm: #= alarm #</dt>
+            </dl>
+        </div>
     </script>
 
 </body>
