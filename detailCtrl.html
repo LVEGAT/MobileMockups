@@ -3,11 +3,11 @@
         <div data-role="navbar">
             <a class="nav-button" data-align="left" data-role="backbutton" data-icon="back">Back</a>
             <span data-role="view-title"></span>
-            <a class="nav-button" data-align="right" data-icon="" data-role="button" href="#actionProgram">Program</a>
+            <a data-role="button" data-align="right" d data-rel="actionsheet" href="#actionProgram">Program</a>
         </div>
     </header>
 
-    <form id="ticketsForm">
+    <form id="frmDetailControl">
 
         <div data-role="scroller" style="width: 100%; height: 100%" data-elastic="false">
             <ul id="fieldlist">
@@ -33,7 +33,7 @@
                 <li>
                     <label for="Type" class="required">Alarms</label>
                     <input type="text" id="fullname" name="fullname" disabled="disabled" class="k-textbox" placeholder="Full name" required validationMessage="Enter {0}"
-                        value="351 Alarmas" style="width: 220px;" />
+                        value="30 Alarmas" style="width: 220px;" />
                 </li>
 
                 <li>
@@ -54,29 +54,31 @@
         </div>
     </form>
 
+    <ul id="actionProgram" data-role="actionsheet" data-popup='{ "height": "auto", "width": 200, "direction": "left" }'>
+        <li>
+            <a data-action="programA">Program A</a>
+        </li>
+        <li>
+            <a data-action="programB">Program B</a>
+        </li>
+        <li>
+            <a data-action="programC">Program C</a>
+        </li>
+        <li>
+            <a data-action="programD">Program D</a>
+        </li>
+        <li>
+            <a data-action="programE">Program E</a>
+        </li>
+        <li>
+            <a data-action="programF">Program F</a>
+        </li>
+    </ul>
+
 </div>
 
 
-<ul id="actionProgram" data-role="actionsheet" data-popup='{ "height": "auto", "width": 200, "direction": "left" }'>
-    <li>
-        <a data-action="programA">Program A</a>
-    </li>
-    <li>
-        <a data-action="programB">Program B</a>
-    </li>
-    <li>
-        <a data-action="programC">Program C</a>
-    </li>
-    <li>
-        <a data-action="programD">Program D</a>
-    </li>
-    <li>
-        <a data-action="programE">Program E</a>
-    </li>
-    <li>
-        <a data-action="programF">Program F</a>
-    </li>
-</ul>
+
 
 
 <style>
@@ -140,5 +142,4 @@
     .k-tooltip-validation .k-warning {
         display: none;
     }
-
 </style>
