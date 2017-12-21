@@ -28,5 +28,11 @@ $(document).ready(function () {
 });
 
 function viewInitProgram(e) {
+    
     $("#gridProgram").kendoGrid(gridConfigProgram); 
+}
+
+function saveProgram()
+{
+    app.navigate("detailCtrl.html");
 }
