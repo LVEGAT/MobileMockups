@@ -5,24 +5,24 @@ var that = this;
 $(document).ready(function () {
     gridConfig = {
         columns: [
-            { field: "name", title: "Name" },
-            { field: "alarm", title: "Alarms" },
-            { field: "sensor", title: "Sensors" },
-            // { command: { text: "Details",name:"details", click: showDetails } },
-            { command: { text: "...", name: "menu", template: "<a data-role='button' data-rel='actionsheet' href='\\#actionsheet'>Run</a>" } },
-            { command: { text: "...", name: "menu", template: "<a data-role='button' data-rel='actionsheet' href='\\#actionProgram'>Program</a>" } }
+            
+            { field: "name", title: "Name", width: 100},
+            { field: "alarm", title: "Alarms", width: 75 },                        
+            { command: { text: "...",width: 75, name: "menu", template: "<a data-role='button' data-rel='actionsheet' href='\\#actionsheet'>Run</a>" }},            
+            { command: { text: "...",width: 75, name: "menu", template: " <a href='\\#detailCtrl' data-icon='cart'>Detail</a>" }}
         ],
         dataSource: [
-            { name: "Controller 1", alarm: 30, sensor: "3 Sensor" },
-            { name: "Controller 2", alarm: 0, sensor: "2 Sensor" },
-            { name: "Controller 3", alarm: 10, sensor: "No Sensors" },
-            { name: "Controller 4", alarm: 11, sensor: "No Sensors" },
-            { name: "Controller 5", alarm: 12, sensor: "No Sensors" }
-        ],
+            { name: "Controller 1", alarm: 30 },
+            { name: "Controller 2", alarm: 0  },
+            { name: "Controller 3", alarm: 10 },
+            { name: "Controller 4", alarm: 11 },
+            { name: "Controller 5", alarm: 12 }
+        ],        
         filterable: true,
         columnMenu: true,
         mobile: "phone",
         height: "auto"
+
     };
 
     wnd = $("#details")
@@ -37,20 +37,14 @@ $(document).ready(function () {
 
 });
 
+
 function viewInitCtl(e) {
     $("#gridCtrl").kendoGrid(gridConfig);
 }
 
-function showDetails(e) {
-    e.preventDefault();
-
-    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    wnd.content(detailsTemplate(dataItem));
-    wnd.center().open();
-}
-
-function showMenu(e) {
-    app.navigate("#actionsheet", "slide", "A");
+function showDetailsCtrl(e)
+{      
+    app.navigate("program.html");
 }
 
 function programA(e) {
@@ -72,5 +66,13 @@ function programF(e) {
     app.navigate("program.html", "slide", "F");
 }
 
+
+function showDetails(e) {
+    e.preventDefault();
+
+    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+    wnd.content(detailsTemplate(dataItem));
+    wnd.center().open();
+}
 
 

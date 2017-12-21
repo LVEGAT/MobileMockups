@@ -28,7 +28,5 @@ $(document).ready(function () {
 });
 
 function viewInitProgram(e) {
-    //  $("#gridEditProgram").kendoGrid(gridConfigProgram);
-    console.log(e.view.params);
-    console.log("viewInitProgram");
+    $("#gridProgram").kendoGrid(gridConfigProgram); 
 }

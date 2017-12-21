@@ -1,6 +1,6 @@
 var app = new kendo.mobile.Application(document.body, { skin: "flat" });
-
 var that = this;
+
 function listViewClick(e) {
     app.navigate("controller.html", "slide");
 }
