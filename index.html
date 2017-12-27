@@ -3,42 +3,50 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Hunter Mobile App</title>
-
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Hunter Industries IMMS</title>
     <link rel="stylesheet" href="styles/kendo.common.min.css" />
     <link rel="stylesheet" href="styles/kendo.rtl.min.css" />
     <link rel="stylesheet" href="styles/kendo.silver.min.css" />
     <link rel="stylesheet" href="styles/kendo.mobile.all.min.css" />
-
+    <link rel="stylesheet" href="styles/imms.css" />
     <script src="js/jquery.min.js"></script>
-    <script src="js/kendo.all.min.js"></script>    
-
+    <script src="js/kendo.all.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.all.min.js"></script>
     <script src="index.js"></script>
     <script src="controller.js"></script>
     <script src="program.js"></script>
     <script src="detailCtrl.js"></script>
     <script src="alarm.js"></script>
+    <script src="home.js"></script>
 </head>
 
 <body>
-
-    <div id="siteview" data-role="view" data-init="viewInitSite">
-        <h2 style="text-align:center ">IMMS System</h2>
-        <ul id="listSite" data-role="listview" data-click="listViewClick"></ul>
-    </div>
-
-
-    <script type="text/x-kendo-template" id="template">
-        <div id="details-container">
-            <h2>#= name # </h2>
-            <em>#= alarm #</em>
-            <dl>
-                <dt>Alarm: #= alarm #</dt>
-            </dl>
+    <script type="text/javascript" src="cordova.js"></script>
+    <div id="loginview" data-role="view" data-init="viewInitSite">
+        <h2 style="text-align:center">Hunter Industries IMMS</h2>
+        <div class="login-page">
+            <div class="form">
+                <form class="register-form">
+                    <input type="text" placeholder="name" />
+                    <input type="password" placeholder="password" />
+                    <input type="text" placeholder="email address" />
+                    <button>create</button>
+                    <p class="message">Already registered?
+                        <a href="#">Sign In</a>
+                    </p>
+                </form>
+                <form class="login-form">
+                    <input type="text" placeholder="username" />
+                    <input type="password" placeholder="password" />
+                    <button data-role="button" data-click="onLoginClick">login</button>
+                    <p class="message">Not registered?
+                        <a href="#">Create an account</a>
+                    </p>
+                </form>
+            </div>
         </div>
-    </script>
-
+    </div>
 </body>
 
 </html>
