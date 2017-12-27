@@ -6,7 +6,10 @@
       <li><a href="contact.asp">Contact</a></li>
       <li><a href="about.asp">About</a></li>
     </ul-->
-    <a class="nav-button" data-align="left" data-role="menubutton" data-icon="menu">Back</a>
+    <div data-role="navbar">
+      <a class="nav-button" data-align="left" data-role="button" data-icon="menu">Back</a>
+      <a class="nav-button" data-align="right" data-icon="map" data-role="button" data-click="showMap">Map</a>
+    </div>
     <!-- <div data-role="navbar">
       <a class="nav-button" data-align="left" data-role="button">
         <img src="images/frmMainGUI.ImgListMain.ImageStream0.png">
@@ -31,8 +34,8 @@
   </header>
   <h2 style="text-align:center ">IMMS System</h2>
   <ul id="listSite" data-role="listview" data-click="listViewClick"></ul>
-  </div>
-  <script type="text/x-kendo-template" id="template">
+</div>
+<script type="text/x-kendo-template" id="template">
     <div id="details-container">
       <h2>#= name # </h2>
       <em>#= alarm #</em>
@@ -41,4 +44,3 @@
       </dl>
     </div>
   </script>
-
