@@ -1,0 +1,80 @@
+#btnShowAlarm{
+    bottom: 0;
+    position: absolute;
+}
+
+#btnClearAlarm{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#fieldlist {
+    margin: 0;
+    padding: 0;
+}
+
+#fieldlist li input {
+    width: 220px;
+    left: 100px;
+}
+
+
+#fieldlist li {
+    list-style: none;
+    padding-bottom: .7em;
+    text-align: left;
+}
+
+
+#fieldlist label {
+    /* display: block; */
+    padding-bottom: .3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #444;
+    left: 26px;
+    position: absolute;
+}
+
+#fieldlist li.status {
+    text-align: center;
+}
+
+#fieldlist li .k-widget:not(.k-tooltip),
+#fieldlist li .k-textbox {
+    margin: 0 5px 5px 0;
+}
+
+.confirm {
+    padding-top: 1em;
+}
+
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: red;
+}
+
+#fieldlist li input[type="checkbox"] {
+    margin: 0 5px 0 0;
+}
+
+span.k-widget.k-tooltip-validation {
+    display: inline-block;
+    width: 160px;
+    text-align: left;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: none;
+    box-shadow: none;
+    color: red;
+}
+
+.k-tooltip-validation .k-warning {
+    display: none;
+}
