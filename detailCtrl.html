@@ -9,53 +9,54 @@
 
     <form id="frmDetailControl">
 
-        <div data-role="scroller" style="width: 100%; height: 100%" data-elastic="false">
+        <div data-role="scroller" style="width: 100%; height: 100%; padding-top: 10px;" data-elastic="false">
             <ul id="fieldlist">
                 <li>
-                    <label for="Controller" class="required">Name</label>
-                    <input type="text" id="txtController" name="fullname" disabled="disabled" class="k-textbox" placeholder="Full name" required validationMessage="Enter {0}"
-                        value="(050) Controller 50" style="width: 220px;" />
+                    <label id="lblName" for="Controller" class="required">Name:</label>
+                    <input type="text" id="txtController" name="fullname" disabled="disabled" class="k-textbox" placeholder="Full name" required
+                        validationMessage="Enter {0}" value="(050) Controller 50" style="width: 220px;" />
                 </li>
 
                 <li>
-                    <label for="Type" class="required">Type</label>
+                    <label id="lblType" for="Type" class="required">Type:</label>
                     <input type="text" id="txtType" name="fullname" disabled="disabled" class="k-textbox" placeholder="Full name" required validationMessage="Enter {0}"
                         value="ACC Controller" style="width: 220px;" />
                 </li>
 
 
                 <li>
-                    <label for="Sensor" class="required">Sensors</label>
-                    <input type="text" id="txtSensor" name="fullname" disabled="disabled" class="k-textbox" placeholder="Full name" required validationMessage="Enter {0}"
-                        value="No Sensor" style="width: 220px;" />
+                    <label id="lblSensor" for="Sensor" class="required">Sensors:</label>
+                    <input type="text" id="txtSensor" name="fullname" disabled="disabled" class="k-textbox" placeholder="Full name" required
+                        validationMessage="Enter {0}" value="No Sensor" style="width: 220px;" />
                 </li>
 
                 <li>
-                    <label for="Alarm" class="required">Alarms</label>
+                    <label id="lblAlarm" for="Alarm" class="required">Alarms:</label>
                     <input type="text" id="txtAlarm" name="fullname" disabled="disabled" class="k-textbox" placeholder="Full name" required validationMessage="Enter {0}"
                         value="30 Alarmas" style="width: 220px;" />
                 </li>
 
                 <li>
-                    <label for="Status" class="required">Status</label>
-                    <input type="text" id="txtStatus" name="fullname" disabled="disabled" class="k-textbox" placeholder="Full name" required validationMessage="Enter {0}"
-                        value="NA" style="width: 220px;" />
+                    <label id="lblStatus" for="Status" class="required">Status:</label>
+                    <input type="text" id="txtStatus" name="fullname" disabled="disabled" class="k-textbox" placeholder="Full name" required
+                        validationMessage="Enter {0}" value="NA" style="width: 220px;" />
                 </li>
 
-
                 <li>
-                    <label for="Changed" class="required">Changed</label>
-                    <input type="text" id="txtChanged" name="fullname" disabled="disabled" class="k-textbox" placeholder="Full name" required validationMessage="Enter {0}"
-                        value="NA" style="width: 220px;" />
-                </li>               
+                    <label id="lblChanged" for="Changed" class="required">Changed:</label>
+                    <input type="text" id="txtChanged" name="fullname" disabled="disabled" class="k-textbox" placeholder="Full name" required
+                        validationMessage="Enter {0}" value="NA" style="width: 220px;" />
+                </li>
             </ul>
-            
-        </div>
-        <!-- <a id="btnShowAlarm" data-role="button" data-click="showAlarms">Show Alarms</a>
-        <a id="btnClearAlarm" data-role="button" data-click="clearAlarms">Clear Alarms</a> -->
 
-        <div class="fiftyLEFT" ><button type="submit" class="submit" value="submit" name="submit_button"><span>Show Alarms</span></button></div>
-        <div class="fiftyRIGHT"><button onclick="location.href='https://google.com';" class="submit" value="show" name="show_button">Delete Alarms</button></div>
+        </div>
+
+        <div id="button-container">
+            <a id="btnShowAlarm" data-role="button" data-click="showAlarms">Show Alarms</a>
+            <a id="btnClearAlarm" data-role="button" data-click="clearAlarms">Clear Alarms</a>
+        </div>
+        <!-- <div class="fiftyLEFT" ><button type="submit" class="submit" value="submit" name="submit_button"><span>Show Alarms</span></button></div>
+        <div class="fiftyRIGHT"><button onclick="location.href='https://google.com';" class="submit" value="show" name="show_button">Delete Alarms</button></div> -->
 
     </form>
 

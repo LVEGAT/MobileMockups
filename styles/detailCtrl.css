@@ -1,9 +1,33 @@
-#btnShowAlarm{
+#lblName {
+    top: 13px;
+}
+
+#lblType {
+    top: 64px;
+}
+
+#lblSensor {
+    top: 118px;
+}
+
+#lblAlarm {
+    top: 171px;
+}
+
+#lblStatus {
+    top: 223px;
+}
+
+#lblChanged {
+    top: 274px;
+}
+
+#btnShowAlarm {
     bottom: 0;
     position: absolute;
 }
 
-#btnClearAlarm{
+#btnClearAlarm {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -15,17 +39,15 @@
 }
 
 #fieldlist li input {
-    width: 220px;
+    width: calc(100% - 154px)!important;
     left: 100px;
 }
-
 
 #fieldlist li {
     list-style: none;
     padding-bottom: .7em;
     text-align: left;
 }
-
 
 #fieldlist label {
     /* display: block; */
@@ -63,84 +85,7 @@
     margin: 0 5px 0 0;
 }
 
-span.k-widget.k-tooltip-validation {
-    display: inline-block;
-    width: 160px;
-    text-align: left;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    background: none;
-    box-shadow: none;
-    color: red;
+#button-container{
+    bottom: 0;
+    width: 100%;
 }
-
-.k-tooltip-validation .k-warning {
-    display: none;
-}
-
-
-
-
-
-button.submit {
-    border: none; 
-    background-image: linear-gradient(-180deg, #52A1DD 50%, #53A2DE 100%);
-    border-radius: 100px; 
-    padding: 8px 10px;
-    font-size: 26px;
-    color: #fff;
-    line-height: 30px;
-    cursor: pointer;
-    -webkit-transition: all .15s ease-in-out;
-    -moz-transition: all .15s ease-in-out;
-    -o-transition: all .15s ease-in-out;
-    transition: all .3s ease-in-out;
-    margin-top: 10px;
-    z-index: 1;
-    position: relative;
-    }
-    
-  button.submit:hover {
-    color: #3193e9; 
-    background: #fff;
-    }
-    
-  button.submit {
-    flex: 1;
-    display:block;
-    width:96%;
-    margin:2%;
-  }
-    
-  button.submit img:hover {
-    background-color: #C37500;
-    opacity:0.7 !important;
-    filter:alpha(opacity=70) !important;
-    }
-  
-  .button-wrapper
-  {
-      width:100%;
-      padding-top:10px;
-      padding-bottom:10px;
-      border: 3px solid black;
-      display:flex;
-      justify-content: center;
-  }
-  
-  @media screen and (max-width: 800px) {
-    .button-wrapper { 
-      flex-direction: column;
-    }
-  }
-  
-  .button-wrapper > .fiftyLEFT
-  {
-     flex:1;
-  }
-  
-  .button-wrapper > .fiftyRIGHT
-  {
-      flex:1;
-  }
