@@ -1,6 +1,6 @@
 var gridConfigAlarm;
 
-$(document).ready(function () {
+
 
 
     gridConfigAlarm = {
@@ -42,10 +42,11 @@ $(document).ready(function () {
         height: "auto"
     };
 
-}); 
+    function viewInitAlarm(e) {
+        $("#gridAlarm").kendoGrid(gridConfigAlarm);
+    }
+    
 
 
-function viewInitAlarm(e) {
-    $("#gridAlarm").kendoGrid(gridConfigAlarm);
-}
+
 

@@ -14,7 +14,7 @@
             <ul id="fieldlist">
                 <li>
                     <label id="lblProgram" for="Program" class="required">Program</label>
-                    <input id="textProgram" type="text" disabled="disabled" class="k-textbox" placeholder="Program" required validationMessage="Enter {0}"
+                    <input id="txtProgram" type="text" disabled="disabled" class="k-textbox" placeholder="Program" required validationMessage="Enter {0}"
                         value="A" style="width: 220px;" />
                 </li>
 
@@ -24,7 +24,7 @@
                         value="Laws" style="width: 220px;" />
                 </li>
                 <li>
-                    <label for="DaysWater" class="required">Days to Water</label>
+                    <label id="lblDaysWater"  for="DaysWater" class="required">Days to Water</label>
                     <ul data-role="buttongroup" data-enable="false">
                         <li style="background-color: lightgreen;">S</li>
                         <li style="background-color: gray;">M</li>
@@ -44,32 +44,32 @@
                     <input type="text" id="txtStartTime"  disabled="disabled" class="k-textbox" value="3:00AM" style="width: 220px;"/>
                 </li>
                 <li>
-                    <label for="ActualStart" class="required">Actual Start</label>
+                    <label id="lblActualStar" for="ActualStart" class="required">Actual Start</label>
                     <input type="text" id="txtActualStar"  disabled="disabled" class="k-textbox" value="----" style="width: 220px;"/>
                 </li>
                 <li>
-                    <label for="EndTime" class="required">End Time</label>
+                    <label id="lblEndTime" for="lblEndTime" class="required">End Time</label>
                     <input type="text" id="txtEndTime"  disabled="disabled" class="k-textbox" value="----" style="width: 220px;"/>
                 </li>
                 <li>
-                    <label for="SolarSync" class="required">Solar Sync</label>
+                    <label id ="lblSolarSync" for="SolarSync" class="required">Solar Sync</label>
                     <input type="text" id="txtSolarSync" disabled="disabled" class="k-textbox" value="YES" style="width: 220px;"/>
                 </li>
                 <li>
-                    <label for="SeasonAjust" class="required">Season Ajust</label>
+                    <label id="lblSeasonAjust" for="SeasonAjust" class="required">Season Ajust</label>
                     <input type="text" id="txtSeasonAjust" disabled="disabled" class="k-textbox" value="80%" style="width: 220px;"/>
                 </li>
                 <li>
-                    <label for="StartMode" class="required">Start Mode</label>
+                    <label id="lblStartMode" for="StartMode" class="required">Start Mode</label>
                     <input type="text" id=txtOverlap" disabled="disabled" class="k-textbox" value="Overlap" style="width: 220px;"/>
                 </li>
                 <li>
                     <a data-role="button" data-click="saveProgram">Save</a>
                 </li>
             </ul>
-            <div style="width: 100%; height: 100%">
+            <!-- <div style="width: 100%; height: 100%">
                 <div id="gridProgram"></div>
-            </div>
+            </div> -->
         </div>
 
     </form>
