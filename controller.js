@@ -7,16 +7,16 @@ $(document).ready(function () {
         columns: [
 
             { field: "name", title: "Name", width: 100 },
-            { field: "alarm", title: "Alarms", width: 75 },
+            { field: "status", title: "Status", width: 75 },
             { command: { text: "...", width: 75, name: "menu", template: "<a data-role='button' data-rel='actionsheet' href='\\#actionsheet'>Run</a>" } },
             { command: { text: "...", width: 75, name: "menu", template: " <a href='\\#detailCtrl' data-icon='cart'>Detail</a>" } }
         ],
         dataSource: [
-            { name: "Controller 1", alarm: 30 },
-            { name: "Controller 2", alarm: 0 },
-            { name: "Controller 3", alarm: 10 },
-            { name: "Controller 4", alarm: 11 },
-            { name: "Controller 5", alarm: 12 }
+            { name: "Controller 1", status: "Idle" },
+            { name: "Controller 2", status: "" },
+            { name: "Controller 3", status: "Idle" },
+            { name: "Controller 4", status: "Day off 2" },
+            { name: "Controller 5", status: "" }
         ],
         filterable: true,
         columnMenu: true,
