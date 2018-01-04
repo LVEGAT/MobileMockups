@@ -8,19 +8,19 @@
         </div>
     </header>
 
-    <form id="ticketsForm">
+    <form id="frmProgram">
 
         <div data-role="scroller" style="width: 100%; height: 100%" data-elastic="false">
             <ul id="fieldlist">
                 <li>
-                    <label for="Program" class="required">Program</label>
-                    <input type="text" id="fullname" name="fullname" disabled="disabled" class="k-textbox" placeholder="Full name" required validationMessage="Enter {0}"
+                    <label id="lblProgram" for="Program" class="required">Program</label>
+                    <input id="textProgram" type="text" disabled="disabled" class="k-textbox" placeholder="Program" required validationMessage="Enter {0}"
                         value="A" style="width: 220px;" />
                 </li>
 
                 <li>
-                    <label for="ProgramName" class="required">Program Name</label>
-                    <input type="text" id="fullname" name="fullname" disabled="disabled" class="k-textbox" placeholder="Full name" required validationMessage="Enter {0}"
+                    <label id="lblProgramName" for="ProgramName" class="required">Program Name</label>
+                    <input id="txtProgramName" type="text" disabled="disabled" class="k-textbox" placeholder="Program Name" required validationMessage="Enter {0}"
                         value="Laws" style="width: 220px;" />
                 </li>
                 <li>
@@ -36,32 +36,32 @@
                     </ul>
                 </li>
                 <li>
-                    <label for="NextWaterDay" class="required">Next Water Day</label>
-                    <input type="text" id="NextWaterDay" name="fullname" disabled="disabled" class="k-textbox" value="12/02/2018" style="width: 220px;"/>
+                    <label id="lblNextWaterDay" for="NextWaterDay" class="required">Next Water Day</label>
+                    <input type="text" id="txtNextWaterDay" name="NextWaterDay" disabled="disabled" class="k-textbox" value="12/02/2018" style="width: 220px;"/>
                 </li>
                 <li>
-                    <label for="StartTime" class="required">Start Time1</label>
-                    <input type="text" id="StartTime" name="fullname" disabled="disabled" class="k-textbox" value="3:00AM" style="width: 220px;"/>
+                    <label id="lblStartTime" for="StartTime" class="required">Start Time1</label>
+                    <input type="text" id="txtStartTime"  disabled="disabled" class="k-textbox" value="3:00AM" style="width: 220px;"/>
                 </li>
                 <li>
                     <label for="ActualStart" class="required">Actual Start</label>
-                    <input type="text" id="ActualStar" name="fullname" disabled="disabled" class="k-textbox" value="----" style="width: 220px;"/>
+                    <input type="text" id="txtActualStar"  disabled="disabled" class="k-textbox" value="----" style="width: 220px;"/>
                 </li>
                 <li>
                     <label for="EndTime" class="required">End Time</label>
-                    <input type="text" id="EndTime" name="fullname" disabled="disabled" class="k-textbox" value="----" style="width: 220px;"/>
+                    <input type="text" id="txtEndTime"  disabled="disabled" class="k-textbox" value="----" style="width: 220px;"/>
                 </li>
                 <li>
                     <label for="SolarSync" class="required">Solar Sync</label>
-                    <input type="text" id="SolarSync" name="fullname" disabled="disabled" class="k-textbox" value="YES" style="width: 220px;"/>
+                    <input type="text" id="txtSolarSync" disabled="disabled" class="k-textbox" value="YES" style="width: 220px;"/>
                 </li>
                 <li>
                     <label for="SeasonAjust" class="required">Season Ajust</label>
-                    <input type="text" id="SeasonAjust" name="fullname" disabled="disabled" class="k-textbox" value="80%" style="width: 220px;"/>
+                    <input type="text" id="txtSeasonAjust" disabled="disabled" class="k-textbox" value="80%" style="width: 220px;"/>
                 </li>
                 <li>
                     <label for="StartMode" class="required">Start Mode</label>
-                    <input type="text" id="Overlap" name="fullname" disabled="disabled" class="k-textbox" value="Overlap" style="width: 220px;"/>
+                    <input type="text" id=txtOverlap" disabled="disabled" class="k-textbox" value="Overlap" style="width: 220px;"/>
                 </li>
                 <li>
                     <a data-role="button" data-click="saveProgram">Save</a>
@@ -75,75 +75,4 @@
     </form>
 </div>
 
-<style>
-    #fieldlist {
-        margin: 0;
-        padding: 0;
-    }
-
-    #fieldlist li {
-        list-style: none;
-        padding-bottom: .7em;
-        text-align: left;
-    }
-
-    #fieldlist label {
-        display: block;
-        padding-bottom: .3em;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-size: 12px;
-        color: #444;
-    }
-
-    #fieldlist li.status {
-        text-align: center;
-    }
-
-    #fieldlist li .k-widget:not(.k-tooltip),
-    #fieldlist li .k-textbox {
-        margin: 0 5px 5px 0;
-    }
-
-    .confirm {
-        padding-top: 1em;
-    }
-
-    .valid {
-        color: green;
-    }
-
-    .invalid {
-        color: red;
-    }
-
-    #fieldlist li input[type="checkbox"] {
-        margin: 0 5px 0 0;
-    }
-
-    span.k-widget.k-tooltip-validation {
-        display: inline-block;
-        width: 160px;
-        text-align: left;
-        border: 0;
-        padding: 0;
-        margin: 0;
-        background: none;
-        box-shadow: none;
-        color: red;
-    }
-
-    .k-tooltip-validation .k-warning {
-        display: none;
-    }
-
-    .waterWindow {
-        background-color: lightgreen;
-        width: 25px;
-        text-align: center;
-        height: 25px;
-        font-weight: bold;
-        border-style: groove;
-    }
-</style>
 
